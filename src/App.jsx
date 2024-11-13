@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [selectedDataset, setSelectedDataset] = useState(true);
+  const [selectedDataset, setSelectedDataset] = useState('Race and Ethnicity');
   const [time, setTime] = useState(0);
 
   return(
@@ -15,19 +15,19 @@ function App() {
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className='header-menu-button'>
-              <Menu className='menu-icon'></Menu>
+              <Menu size={24} className='menu-icon'></Menu>
           </button>
           <h1 className='header-title'>MapLapse</h1>
         </div>
         <button 
           className='header-settings-button'
-        ><Settings className='settings-icon'></Settings>
+        ><Settings size={24} className='settings-icon'></Settings>
         </button>
       </header>
 
       {/* body */}
-      <div className={`sidebar-container ${!sidebarOpen ? 'closed' : ''}`}>
-        <aside className='sidebar-container'>
+      <div className='app-body'>
+        <aside className={`sidebar-container ${!sidebarOpen ? 'closed' : ''}`}>
           <div className='sidebar-content'>
             <h2 className='sidebar-title'>Available Datasets</h2>
             <div className='dataset-selector'>
@@ -66,8 +66,8 @@ function App() {
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className='sidebar-toggle-button'
           >
-            {sidebarOpen ? <ChevronLeft className='chevron-left-toggle'></ChevronLeft> :
-                             <ChevronRight className='chevron-right-toggle'></ChevronRight>}
+            {sidebarOpen ? <ChevronLeft size={24} className='chevron-left-toggle'></ChevronLeft> :
+                             <ChevronRight size={24} className='chevron-right-toggle'></ChevronRight>}
                   
           </button>
         </main>
