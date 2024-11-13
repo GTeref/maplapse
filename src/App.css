@@ -1,42 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Main container */
+.app-overseer-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header styles */
+.app-header {
+  height: 4rem;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-body{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
 }
 
-.card {
-  padding: 2em;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.header-menu-button, 
+.header-settings-button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.header-menu-button:hover, 
+.header-settings-button:hover {
+  background-color: #f3f4f6;
+}
+
+.menu-icon,
+.settings-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Sidebar */
+.sidebar-container {
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  width: 16rem;
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.sidebar-container.closed {
+  transform: translateX(-16rem);
+}
+
+.sidebar-content {
+  padding: 1rem;
+}
+
+.sidebar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dataset-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dataset-selector-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Map container */
+.map-view-container {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.map-view-content {
+  position: absolute;
+  inset: 0;
+  background-color: #f3f4f6;
+}
+
+.sidebar-toggle-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-toggle-button:hover {
+  background-color: #f9fafb;
+}
+
+.chevron-left-toggle,
+.chevron-right-toggle {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Time slider */
+.time-slider-container {
+  height: 6rem;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.time-slider-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.time-slider-label {
+  font-weight: 500;
+}
+
+.time-slider-input {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Add these styles to index.css or App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
 }
